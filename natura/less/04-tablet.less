@@ -1,0 +1,238 @@
+/*
+Nombre del sitio:	In serie 5.0
+Autor:				Marco A. Hernández Pérez
+*/
+
+/* Tablet widescreen
+================================================== */
+.tablet () {
+h1 {
+	font-size: 7rem;
+}
+
+.boton {
+	&.gris {
+		width: 400px;
+	}
+}
+/*********************
+SLIDER
+*********************/
+#slider {
+	.carousel-indicators {
+		bottom: 15px;
+	}
+}
+
+/*********** Slides ***********/
+.item {
+	.texto {
+		position: absolute;
+		width: 100%;
+		background: transparent;
+
+		left: ;
+		top: 32%;
+	}
+
+	h1 {
+		font-size: 4.5rem;
+	}
+
+	p {
+		font-size: 2.2rem;
+	}
+
+	figure {
+		text-align: center;
+	}
+}
+
+/*********************
+HEADER
+*********************/
+header {
+	height: 280px;
+
+	.navbar-default {
+		.navbar-header .navbar-brand {
+			top: 30px;
+		}
+
+		.navbar-nav {
+			margin-top: 112px;
+		}
+	}
+}
+
+body:not(#home) {
+	header {
+		height: 160px;
+		
+		.navbar-default .navbar-nav {
+			margin-top: 20px;
+		}
+
+		.navbar-default .navbar-header .navbar-brand {
+			top: 6px;
+		}
+	}
+}
+
+/* 
+HOME
+=============================================================
+*/
+/*********************
+DESTACADOS
+*********************/
+#destacados {
+	h1 {
+		margin: 40px 0 70px 0;
+		font-size: 3.3rem;
+	}
+
+	.seccion {
+		.texto {
+			h2 {
+				font-size: 3.4rem;
+			}
+
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+
+#testimonios {
+	.premio-desktop {
+		figure {
+			width: auto;
+		}
+	}
+}
+
+/*********************
+FOOTER
+*********************/
+footer {
+	.footer-legal {
+		font-size: 1.2rem;
+	}
+}
+
+/* 
+BASES
+=============================================================
+*/
+.logra-gana {
+	.tabla {
+		overflow: auto;
+	}
+
+	td {
+		font-size: 1.5rem;
+	}
+}
+
+.importante, .bases-lista {
+	p {
+		font-size: 1.6rem;
+
+		br {
+			display: block;
+		}
+	}
+
+	.nota {
+		font-size: 1.4rem;
+	}
+}
+
+.importante {
+	p {
+		font-size: 1.8rem;
+	}
+}
+
+/*********************
+CONVENCIÓN
+*********************/
+#convencion {
+	height: 530px;
+
+	p, li {
+		font-size: 1.8rem;
+	}
+}
+
+/*********************
+PREMIOS
+*********************/
+#premios {
+	padding-top: 60px;
+
+	.frame {
+		margin: 20px 30px;
+	}
+
+	.logo-consultoria {
+		img {
+			width: auto;
+		}
+	}
+
+	p, li {
+		font-size: 1.8rem;
+	}
+
+	.premio-desktop {
+		width: 160px;
+
+		figure {
+			bottom: -161px;
+		}
+	}
+}
+
+/* 
+BENEFICIOS
+=============================================================
+*/
+.banner {
+	&.beneficios {
+		h2 {
+			font-size: 2.6rem;
+		}
+	}
+}
+
+/* 
+GALERIA
+=============================================================
+*/
+#galeria {
+	h2 {
+		font-size: 3rem;
+	}
+
+	.seccion {
+		.texto {
+			padding: 14px 0 10px 0;
+			
+			h2 {
+				font-size: 2.4rem;
+			}
+		}
+	}
+}
+
+.fg {
+	.title {
+		font-size: 1.6rem;
+	}
+}
+
+}

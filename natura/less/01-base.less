@@ -1,0 +1,1601 @@
+/*
+Nombre del sitio:	In Serie 5
+Autor:				Marco A. Hernández Pérez
+*/
+
+/*********************
+IMPORTS
+*********************/
+
+@import "mixins.less"; 
+
+/*********************
+ESTILOS GENERALES
+*********************/
+.lcd {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 2107;
+	// display: none;
+
+	.texto {
+		margin-top: 40vh;
+		text-align: center;
+	}
+
+	h6, p {
+		color: @blanco;
+	}
+
+	h6 {
+		font-size: 2.4rem;
+		font-weight: 700;
+		.animation(texto 3s infinite);
+	}
+
+	p {
+		font-size: 1.7rem;
+		.animation(texto 3s infinite);
+	}
+}
+
+   @-webkit-keyframes texto {
+      0% {
+        
+        color: @blanco
+      }
+      
+      
+      50% {
+        
+        color: @marron;
+      }
+      
+      
+      100% {
+        
+        color: @blanco;
+      }
+    }
+
+html {
+	// overflow-y: hidden;
+}
+body {
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+	background: url('../images/fondo-full.jpg') bottom left no-repeat;
+	background-size: cover;
+	color: @gris-100;
+	.glight;
+	font-weight: 300; 
+
+	&#bases {
+		background: 0; 
+	}
+
+	&#contacto {
+		background: url('../images/fondo-contacto.jpg') bottom left no-repeat;
+		background-size: cover;
+	}
+
+}
+    
+img {
+	max-width:100%;
+}
+
+div {
+}
+    
+hr {
+}
+
+/******* Tipografía ******/
+// Encabezados
+h1, h2, h3, h4, h5, h6 {
+	a{
+	}
+}
+
+h1 {
+	margin-bottom: 30px;
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h2 {
+
+}
+
+h3 {
+	color: @marron;
+	font-size: 2.2rem;
+	margin-bottom: 0px;
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+// Párrafo
+article {
+	p {
+
+	}
+
+	li {
+
+	}
+}
+
+p {
+}
+
+b {
+}
+
+i {
+}
+
+small {
+}
+
+abbr {
+}
+
+address {
+}
+
+pre {
+}
+
+// Formato de texto
+strong {
+}
+
+em {
+}
+
+dfn {
+}
+
+code {
+}
+
+samp {
+}
+
+kbd{
+}
+
+var {
+}
+
+//Subscript y Superscript
+sub {
+}
+sup {
+}
+
+// Insertado y borrado
+del {
+}
+
+ins {
+}
+
+// Citas
+q {
+}
+
+blockquote {
+	cite {
+	}
+}
+
+/******* Links ******/
+a, a:visited { 
+
+	/* on hover */
+	&:hover, &:focus {
+		outline: none;
+	}
+	
+	/* on click */
+	&:active {
+	}
+	
+	/* mobile tap color */
+	&:link {
+	}
+}
+
+*:focus {
+	outline: none;  
+}
+/******* Listas ******/
+// Lista desordenada
+ul {
+	li {
+		a, a:visited { 
+		/* on hover */
+			&:hover, &:focus {
+			}
+			/* on click */
+			&:active {
+			}
+			/* mobile tap color */
+			&:link {
+			}
+		}
+		
+		ul{
+			li {
+			}
+		}
+		ol {  			
+			li {
+			}
+		}
+	}
+}
+
+// Lista ordenada
+ol {
+	
+	li {
+		ul{
+			li {
+			}
+		}
+		ol {  			
+			li {
+			}
+		}
+	}
+}
+
+// Listas de definición
+dl {
+	dt {
+	}
+	dd {
+	}
+}
+/******* Tablas ******/
+table {
+	thead {
+		tr {
+			th{
+			}
+		}
+	}
+	
+	tfoot {
+		tr {
+			td {
+			}
+		}
+	}
+	
+	th {
+	}
+	
+	caption {
+	}
+
+	tr {
+		td {
+		}
+	}
+}
+
+/******* Forms ******/
+form {
+	fieldset {
+	}
+	
+	input[type="checkbox"] {
+	}
+
+	input[type="radio"] {
+	}
+	
+	input[type="submit"],
+	input[type="button"] {
+	}
+	
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="num"],
+	textarea,
+	select {
+	}
+	
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	input[type="tel"],
+	input[type="num"],
+	textarea:focus{
+	}
+	
+	select {
+		optgroup {
+		}
+	}
+
+	label {
+	}
+	
+	legend {
+	}
+
+}
+
+.input-radio(); 
+
+.input-checkbox();
+
+.input-file();
+
+/*********************
+SLIDER
+*********************/ 
+#slider {
+	// padding-top: 64px;
+	margin-bottom: ;
+
+/*************** Indicadores ***************/
+	.carousel-indicators {
+		margin-left: 0;
+		left: ;
+		right: ;
+		bottom: ;
+		width: auto;
+
+		li {
+			margin-right: 6px;
+			width: 15px;
+			height: 15px;
+			background: @gris-60;
+			border: ;
+		}
+
+		.active {
+			background: @blanco;
+			border: ;
+		}
+	}
+
+/*************** Efectos ***************/
+// imagen transparente
+	&.color {
+		.item {
+			img {
+				.opacity(0.3); 
+			}
+		}
+	}
+}
+
+/*************** Slides ***************/
+.item {
+	background: @gris-100;
+
+	.texto {
+		padding: 10px 15px;
+		background: @gris-80;
+		text-align: center;
+	}
+
+	h1 {
+		margin: 0;
+		margin-bottom: 15px;
+		padding: 0;
+		color : @blanco;
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
+
+	p {
+		color: @blanco;
+		font-size: 1.4rem;
+	}
+
+	figure {
+		overflow-y: hidden;
+		text-align: center;
+
+		max-height: 550px;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+#slide-1 {
+
+}
+
+#slide-2 {
+
+}
+
+#slide-3 {
+
+}
+
+/*********************
+TABS
+*********************/ 
+/*************** Botones ***************/
+.nav-tabs {
+	border-bottom: 0;
+
+	li {
+		a {
+			// Resets
+			margin-right: 0;
+			border: 0;
+			.border-radius(0);
+			
+			// Modificar
+			padding: ;
+			background: ;
+			color: ;
+			width: ;
+			font-size: ;
+
+			&:hover, &:active, &:focus {
+				// Resets
+				border: 0;
+				
+				// Modificar
+				background: ;
+				color: ;
+			}
+		}
+
+// Última tab
+		&:last-child {
+			a {
+				
+			}
+		}
+
+// Activa
+		&.active {
+			a {
+				// Resets
+				border: 0;
+
+				// Modificar
+				background: ;
+				color: ;
+
+				&:hover, &:active, &:focus {
+					// Rsets
+					border: 0;
+
+					// Modificar
+					background: ;
+					color: ;
+				}
+			}
+		}
+	}
+}
+
+/*************** Contenido ***************/
+.tab-contnet {
+
+}
+
+/*********************
+UTILIDADES
+*********************/ 
+// Texto de selección
+.text-selection(@blanco, @negro);  
+
+/*************** Iframe ***************/
+// Iframe (mapa o video)
+.iframe {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/*************** Botones ***************/
+.boton-cont {
+	text-align: center;
+}
+
+.boton {
+	display: inline-block;
+	margin: 10px 0;
+	padding: 10px;
+	background: @negro;
+	color: @blanco;
+	font-weight: 600;
+	font-size: 1.6rem;
+	text-align: center;
+	text-decoration: none;
+	.transition; 
+
+	&:hover, &:active, &:focus {
+		background: @gris-80;
+		color: @gris-20;
+		text-decoration: none;
+		.transition;
+	}  
+
+// Color
+	&.gris {
+		.grad-metal(@blanco, rgba(255,255,255,0.3), rgba(255,255,255,0.3), @blanco);
+		color: @gris-100;
+
+		&:hover, &:active, &:focus {
+			background: @blanco;
+			color: ;
+		}  
+	}
+
+}
+
+/*************** Botones de redes sociales ***************/
+.iconos-redes {
+
+/* Ligas */
+	a:link, a:visited {
+		display: table;
+		text-align: center;
+		.transition(background);
+		
+		padding: 2px; 
+		background: transparent;
+		.border-radius(200px);
+
+  
+		&:hover, &:active, &:focus {
+			background: ;
+			.transition(background);
+
+			svg {
+				.icono {
+					fill: @marron;
+				}
+			}
+		}
+	}
+
+/* Vectores */
+	svg {
+		display: table-cell;
+		vertical-align: center;
+
+		// Tamaño
+		width: px;
+		height: px;
+		
+		// Color del ícono
+		.icono { 
+			fill: @gris-100;
+		}
+	}
+}
+
+/*********************
+HEADER
+*********************/ 
+.bot-cont {
+	position: absolute;
+	right: 0;
+	bottom: -32px;
+	// width: 100%;
+	text-align: center;
+} 
+
+header .navbar-default .navbar-nav li a.boton-ganadores:link, header .navbar-default .navbar-nav li a.boton-ganadores:visited {
+	// display: inline-block;
+	// padding: 6px;
+	background: @marron;
+	color: @blanco;
+	text-align: center;
+	// .border-radius-bottom;
+	// .transition(background);
+
+	&:hover, &:active {
+		background: darken(@marron, 10%);
+		color: @blanco;
+		text-decoration: none;
+		// .transition(background);
+	}
+}
+
+header {
+	position: relative;
+	margin-bottom: 40px;
+	background: url('../images/fondo-header.jpg') center top no-repeat;
+	background-size: cover;
+	.shadow(0, 2px, 10px, 3px, rgba(0,0,0,0.55));
+
+// Logo
+	.navbar-brand {
+		// Sólo se cambia el primer valor
+		padding: 6px 15px;
+		height: auto;
+
+		img {
+			width: 52px;
+		}
+	}
+
+// Toggle
+	.navbar-default {
+		position: fixed;
+		z-index: 5;
+		margin-bottom: 0;
+		width: 100%;
+		background-color: transparent;
+		border: 0;
+
+		.transition(background);
+
+		&.fixed {
+			overflow-y: auto;
+			height: 100%;
+		}
+
+		.navbar-collapse {
+			position: absolute;
+			width: 100%;
+			max-height: inherit;
+			margin: 0 -15px;
+			background: @gris-100;
+   
+		}
+
+		.navbar-nav {
+			border-top: 1px solid @gris-40;
+			margin: 0 -15px;
+
+			li {
+				a:link, a:visited {
+					padding-left: 30px;
+					padding-right: 30px;
+					background: ;
+					color: @blanco;
+					font-size: ;
+					text-transform: uppercase;
+					border-bottom: 1px solid @gris-60;
+					.transition(background);
+
+					&:hover, &:active, &:focus {
+						background: @gris-40;
+						color: ;
+						.transition(background);
+					}
+
+					&.active {
+						background: @marron;
+						color: @blanco;
+					}
+				}
+
+				&.active {
+					border-bottom: 2px solid @gris-40;
+				}
+
+				br {
+					display: none;
+				}
+
+/*************** Dropdown***************/
+				.dropdown-menu {
+					// margin-top: -10px;
+					padding: 0;
+
+					li {
+						width:100%;
+						display: block;
+
+						a:link, a:visited {
+							display: block;
+							padding-top: 6px;
+							background: @marron;
+							color: @blanco;
+							font-size: 1.2rem;
+							text-align: center;
+							border: 0;
+							.transition(background);
+
+							&:hover, &:active, &:focus {
+								color: lighten(@marron, 35%);;
+								.transition(background);
+							}
+
+							&::after {
+								content: '';
+								margin: auto;
+								margin-top: 6px;
+								width: 80%;
+								height: 1px;
+								background: @blanco;
+								display: block;
+							}
+						}
+
+						&:first-child {
+							a:link, a:visited {
+								padding-top: 12px;
+							}
+						}
+
+						&:last-child {
+							a:link, a:visited {
+								&::after {
+									margin-top: 0;
+									height: 0;
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+// Botón
+		.navbar-toggle {
+			margin-top: 13px;
+			background: @gris-80;
+			border: 1px solid @gris-80;
+			.border-radius(0px);
+			.transition(background);
+
+			.icon-bar {
+				background: @blanco;
+				.transition(background);
+			}
+
+			&:hover {
+				background: @gris-80;
+			}
+
+			&.collapsed {
+				background: transparent;
+				.transition(background);
+
+				.icon-bar {
+					background: @gris-80;
+					.transition(background);
+				}
+			}
+		}
+
+		&.fondo {
+			// padding-top: 20px;
+			background: @gris-20;
+			.glow();
+			.transition(background);
+		}
+	}
+
+// Texto logo
+	.texto-logo {
+		padding: 80px 0 20px 0;
+		text-align: center;
+		
+		figure {
+			z-index: 22;
+		}
+
+		a {
+			display: block;
+		}
+
+		img {
+			width: 230px;
+		}
+	}
+}
+
+#trigger1 {
+	position: absolute;
+	top: 52%;
+	width: 100%;
+}
+
+/* 
+HOME
+=============================================================
+*/
+/*********************
+DESTACADOS
+*********************/
+#destacados {
+	// background: url('../images/fondo-luz.jpg') center center no-repeat;
+	background-size: cover;
+
+	h1 {
+		margin-bottom: 40px;
+		font-weight: 300;
+		font-size: 2.5rem;
+		text-align: center;
+
+		span {
+			display: block;
+			color: @marron;
+		}
+	}
+}
+
+.seccion {
+	margin-bottom: 30px;
+	position: relative;
+
+	a:link, a:visited {
+		img {
+			opacity: 1;
+			.transition(opacity);
+
+		}
+
+		&:hover, &:active {
+			img {
+				opacity: 0.8;
+				.transition(opacity);
+			}
+
+			h2, p {
+				color: @gris-80;
+			}
+		}
+		
+	}
+	
+	
+
+	.texto {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 15px;
+		.grad-horizontal (@blanco, rgba(255, 255, 255, 0));
+
+		h2 {
+			margin-top: 0;
+			margin-bottom: 4px;
+			font-weight: 300;
+			font-size: 3.4rem;
+			text-transform: uppercase;
+		}
+
+		p {
+			margin-bottom: 0;
+			font-weight: 300;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/*********************
+TESTIMONIOS
+*********************/
+#testimonios {
+	position: relative;
+	margin-bottom: 50px;
+	margin-top: 30px;
+
+	.premio.movil {
+		margin-bottom: 50px;
+		text-align: center;
+
+		img {
+			width: 100px;
+		}
+	}
+
+	.premio-desktop {
+		display: none;
+	}
+}
+
+.persona {
+	margin-bottom: 25px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid @gris-40;
+	figure {
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	p, q {
+		display: block;
+		margin-bottom: 5px;
+		font-size: 1.6rem;
+
+		strong {
+			// font-weight: 400;
+		}
+	}
+
+	a {
+		display: block;
+		margin-top: 20px;
+	}
+}
+
+/*********************
+FOOTER
+*********************/
+footer {
+// Subir
+.boton-arriba {
+	margin-bottom: 20px;
+	text-align: center;
+	position: relative;
+
+	a:link, a:visited {
+		text-transform: uppercase;
+		font-size: 2.8rem;
+
+		span {
+			position: relative;
+			top: -6px;
+		}
+
+		&:hover, &:active {
+			color: @marron;
+			text-decoration: none;
+		}
+
+		&::before, &::after {
+			content: '';
+			height: 1px;
+			background: @gris-100;
+			position: absolute;
+			top: 16px;
+			width: 28%;
+		}
+
+		&::before {
+			left: 0;
+		}
+
+		&::after {
+			right: 0;
+		}
+	}
+}
+
+// Legal
+	.footer-legal {
+		text-align: center;
+	}
+
+// Redes
+	.iconos-redes {
+		margin-bottom: 20px;
+		padding-left: 0;
+		display: table;
+		width: 100%;
+
+		li {
+			list-style-type: none;
+			display: table-cell;
+
+			a:link, a:visited {
+				display: block;
+				margin: auto;
+
+				svg {
+					margin: auto;
+				}
+			}
+		}
+	}
+}
+
+/* 
+BASES
+=============================================================
+*/
+.bases-lista {
+	padding: 30px 0;
+	background: url('../images/fondo-full.jpg') bottom left no-repeat;
+	background-size: cover;
+}
+
+.importante {
+	margin: 30px 0;
+	text-align: center;
+
+	p {
+		color: @marron;
+
+		br {
+			display: none;
+		}
+	}
+
+	.nota { 
+		color: @gris-100;
+		font-size: 1.3rem;
+
+	}
+
+	.notas {
+		margin-top: 30px;
+	}
+}
+
+/*********************
+TABLA LOGRA Y GANA
+*********************/
+.logra-gana {
+	position: relative;
+	padding: 30px 0;
+	background: url('../images/fondo-full.jpg') bottom left no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	.tabla {
+		overflow-x: scroll;
+	}
+
+	table {
+		overflow-x: scroll;
+		margin-bottom: 30px;
+		width: 100%;
+	}
+
+	thead, tfoot {
+		font-size: 2.5rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		position: relative;
+	}
+
+	th {
+		background: url('../images/grad-hor.svg') bottom center no-repeat;
+		background-size: contain;
+		font-weight: 400;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	tfoot {
+		td {
+			padding-top: 6px;
+			background: url('../images/grad-hor.svg') top center no-repeat;
+			background-size: contain;
+			font-weight: 400;
+			font-size: 2rem;
+			text-align: center;
+		}
+	}
+
+	tbody {
+		td {
+			width: 16.6%;
+			background: url('../images/icono-mas.svg') right center no-repeat;
+
+			&:last-child {
+				background: 0;
+			}
+		}
+
+		tr:first-child {
+			td {
+				padding: 20px 16px 20px 4px;
+				background: url('../images/grad-ver.svg') 94% top no-repeat;
+
+				&:last-child {
+					background: 0;
+				}
+			}
+		}
+
+		tr:last-child {
+			td {
+				padding: 20px 16px 20px 4px;
+				background: url('../images/grad-ver.svg') 94% bottom no-repeat;
+
+				&:last-child {
+					background: 0;
+				}
+			}
+		}
+	}
+
+}
+
+/*********************
+CONVENCIÓN
+*********************/
+#convencion {
+	padding-top: 30px;
+	padding-bottom: 60px;
+	background: url('../images/dubai.jpg')right top no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	br {
+		display: none;
+	}
+
+	p, li {
+		color: @blanco;
+	}
+
+	ul {
+		margin-bottom: 0;
+	}
+
+	li {
+		text-align: left;
+
+		br {
+
+		}
+	}
+
+	h4 {
+		color: @blanco;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&::before, &::after {
+			content: '';
+			display: block;
+			padding: 10px 0;
+			width: 100%;
+			height: 4px;
+		}
+
+		&::before {
+			padding-bottom: 0px;
+			background: url('../images/grad-hor-blanco.svg') center top no-repeat;
+			background-size: 100% 2px;
+		}
+
+		&::after {
+			padding-top: 0px;
+			background: url('../images/grad-hor-blanco.svg') center top no-repeat;
+			background-size: 100% 2px;
+		}
+	}
+}
+
+/*********************
+PREMIOS
+*********************/
+#premios {
+	position: relative;
+	// margin-top: 30px;
+	padding: 30px 0;
+	background: url('../images/fondo-full.jpg') bottom left no-repeat;
+	background-size: cover;
+
+	.frames {
+		margin: 20px 0;
+		text-align: center;
+	}
+
+	.frame {
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+		border: 9px solid @gris-100;
+		display: inline-block;
+	}
+
+	.premio-desktop {
+		display: none;
+	}
+
+	h2 {
+		background: url('../images/grad-hor.svg') right bottom no-repeat;
+		color: @gris-100;
+		font-weight: 700;
+
+		small {
+			display: block;
+			color: @gris-100;
+		}
+	}
+
+	ul {
+		margin-bottom: 60px;
+		padding-left: 15px;
+	}
+}
+
+/* 
+BENEFICIOS
+=============================================================
+*/
+.banner {
+	margin-bottom: 30px;
+
+	&.beneficios {
+		height: 200px;
+		background: url('../images/banner-beneficios.jpg') left top no-repeat;
+		background-size: cover;
+		color: @blanco;
+
+		h2 {
+			width: 200px;
+			font-size: 2.3rem;
+
+			br {
+				display: none;
+			}
+		}
+	}
+}
+
+#beneficios {
+	article {
+		margin-bottom: 50px; 
+	}
+
+	.premio-desktop {
+		display: none;
+	}
+}
+
+/* 
+GALERIA
+=============================================================
+*/
+#galeria {
+	h1 {
+		margin-bottom: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+		color: @marron;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	#estados {
+		margin-top: 40px;
+		margin-bottom: 100px;
+	}
+
+	.seccion {
+		.texto {
+			padding: 12px 0 8px 0;
+			width: 100%;
+			background-image: none;
+			background: rgba(255, 255, 255, 0.7);
+
+			h2 {
+				margin: 0;
+				color: @negro;
+			}
+		}
+	}
+}
+
+.fg {
+	margin: 0;
+	max-width: inherit;
+
+	.title {
+		display: block;
+		margin: 0 15px;
+		font-size: 1.4rem;
+		font-weight: 600;
+		.glight;
+		text-align: center;
+	}
+
+	.thumb {
+		margin: 0;
+		width: 25%;
+		height: inherit;
+		overflow: auto;
+		background: 0;
+		.shadow(0,0,0,0,rgba(0,0,0,0));
+
+		a:link, a:visited {
+			position: relative;
+			display: block;
+			// background: @negro;
+			background: @blanco url('../images/loader.gif') center center no-repeat;
+			max-width: 100%;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.4) url('../images/icono-zoom.svg') center center no-repeat;
+				z-index: 1;
+				.opacity(0);
+				.transition(opacity);
+			}
+
+			img {
+				width: 100%;
+				min-height: 50px;
+				position: relative;
+				.opacity(1);
+			}
+
+			&:hover, &:active, &:focus {
+				&::after {
+					.opacity(1);
+					.transition(opacity);
+				}
+
+				img {
+					// .opacity(.7);
+				}
+			}
+
+		}
+	}
+
+	.thumbwrap-inner {
+		height: inherit;
+		overflow: auto;
+	}
+
+	.thumbwrap {
+		margin-top: 10px;
+		margin-bottom: 60px;
+	}
+
+	a {
+		&.toleft, &.toright {
+			color: @gris-100;
+			display: none;
+
+			&.nolink {
+				color: @gris-60;
+			}
+
+			&:hover, &:active, &:focus {
+				color: @marron;
+			}
+		}
+
+		&.toright {
+			margin-right: 15px;
+		}
+	}
+}
+
+#fgOverlay {
+	.topbar {
+		.glight;
+		font-weight: 600;
+	}
+
+	.bottombar {
+		.glight;
+	}
+
+	.itemnums {
+		.glight;
+	}
+
+	a.icon-right-bold, a.icon-left-bold {
+		margin-top: 7px;
+	}
+
+	#thumb-container-inner {
+		.thumb {
+			&.selected {
+				background: @blanco;
+				border: 3px solid @blanco;
+			}
+		}
+	}
+}
+
+.showimage {
+	&:hover, &:active, &:focus {
+		img {
+			.opacity(.7);
+		}
+	}
+}
+
+// .hide-overflow {
+// 	overflow: hidden;
+// }
+
+.loader {
+	// position: fixed;
+	// left: 0;
+	// top: 0;
+	// width: 100%;
+	// height: 100%;
+	// z-index: 9999;
+	// background: rgba(0, 0, 0, 0.7);
+
+	.texto-cargar {
+		position: fixed;
+		top: 50%;
+		left: 46%;
+		padding: 20px;
+		padding-left: 80px;
+		background: @blanco url('../images/loader.gif') 15px center no-repeat;
+		.border-radius;
+		.shadow;
+		z-index: 344;
+	}
+}
+
+/* 
+CONTACTO
+=============================================================
+*/
+/*********** Formulario ***********/
+#contacto {
+	form {
+		overflow-x: hidden;
+		margin-bottom: 50px;
+	}
+
+	button {
+		padding: 8px 0px;
+		background: 0;
+		font-size: 2rem;
+		text-transform: uppercase;
+		color: @marron;
+		border: none;
+		.transition(background);
+		opacity: 1;
+
+		span {
+			// position: relative;
+			// top: -4px;
+		}
+
+		&:hover, &:focus {
+			color: @gris-80;
+			.transition(background);
+		}
+	}
+	
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	textarea {
+		margin: 10px 0;
+		padding: 10px;
+		width: 100%;
+		display: block;
+		background: @gris-20;
+		font-size: 2rem;
+		color: @gris-100;
+		border: none;
+		border-bottom: 1px solid @gris-60;
+		.border-radius(0);
+		overflow-x: hidden;
+		display: table-cell;
+	}
+
+	textarea {
+		height: 200px;
+		overflow-x: hidden;
+		display: table-cell;
+	}
+
+	.placeholder(@gris-60);
+
+	#retro {
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: @marron;
+		font-style: italic;
+	}
+}
+
+/* 
+MODALES
+=============================================================
+*/
+.modal {
+	h4 {
+		font-size: 2.3rem;
+	}
+
+	label {
+		text-align: center;
+		font-size: 1.6rem;
+	}
+
+	input {
+		margin-bottom: 20px;
+
+	}
+	.boton {
+		display: block;
+		margin: 10px auto;
+		width: 170px;
+	}
+}
+
+.sweet-alert {
+	button {
+		// display: inline-block;
+		margin: 10px 0;
+		padding: 10px;
+		background: @negro!important;
+		color: @blanco;
+		font-weight: 600;
+		font-size: 1.6rem;
+		text-align: center;
+		text-decoration: none;
+		.transition; 
+
+		&:hover, &:active, &:focus {
+			background: @gris-80!important;
+			color: @gris-20;
+			text-decoration: none;
+			.transition;
+		}  
+	}
+}
+
+.modal-header {
+	.close {
+		margin-top: 4px;
+		font-size: 3.4rem;
+	}
+}
+
+/* 
+UNO
+=============================================================
+*/
+
+
+/*********************
+DOS
+*********************/
+
+/*************** Tres ***************/
+
+/*========= Cuatro =========*/
+
+/*::::: Cinco :::::*/
+
+/*··· Seis ···*/
+
+// Siete
+

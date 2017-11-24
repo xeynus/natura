@@ -1,0 +1,333 @@
+/*
+Nombre del sitio:	In serie 5.0
+Autor:				Marco Antonio Hernández Pérez
+*/
+/*********************
+COLORES
+*********************/
+.icono-facebook {
+  background: #1860aa;
+}
+.icono-facebook:hover,
+.icono-facebook:active,
+.icono-facebook:focus {
+  background: #12477d;
+}
+.icono-twitter {
+  background: #35a8e0;
+}
+.icono-twitter:hover,
+.icono-twitter:active,
+.icono-twitter:focus {
+  background: #1e8ec4;
+}
+.icono-linkedin {
+  background: #005794;
+}
+.icono-linkedin:hover,
+.icono-linkedin:active,
+.icono-linkedin:focus {
+  background: #003961;
+}
+.icono-pinterest {
+  background: #ca2027;
+}
+.icono-pinterest:hover,
+.icono-pinterest:active,
+.icono-pinterest:focus {
+  background: #9e191e;
+}
+.icono-googleplus {
+  background: #dc4e41;
+}
+.icono-googleplus:hover,
+.icono-googleplus:active,
+.icono-googleplus:focus {
+  background: #c63224;
+}
+.icono-foursquare {
+  background: #e73e71;
+}
+.icono-foursquare:hover,
+.icono-foursquare:active,
+.icono-foursquare:focus {
+  background: #d71b54;
+}
+.icono-instagram {
+  background: #c22f86;
+}
+.icono-instagram:hover,
+.icono-instagram:active,
+.icono-instagram:focus {
+  background: #99256a;
+}
+.icono-youtube {
+  background: #e52d27;
+}
+.icono-youtube:hover,
+.icono-youtube:active,
+.icono-youtube:focus {
+  background: #c21d17;
+}
+/*********************
+FORMULARIOS
+*********************/
+/*********************
+TIPOGRAFÍA
+*********************/
+/********** Tipos de letra ***********/
+@font-face {
+  font-family: 'GillSansMT';
+  src: url('GillSansMT.eot') format('embedded-opentype') format('woff'), url('GillSansMT.ttf') format('truetype'), url('GillSansMT.svg#GillSansMT') format('svg');
+}
+/*Bases*/
+.normal {
+  font-family: Arial, Verdana, "Helvetica Neue", Helvetica, sans-serif;
+}
+.gill {
+  font-family: 'GillSansMT', Times, serif;
+}
+/*text decoration*/
+.tnone {
+  text-decoration: none;
+}
+.tunder {
+  text-decoration: underline;
+}
+/* Alinear */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+/*********************
+BOTONES
+*********************/
+/*********************
+FONDOS
+*********************/
+.fsimple {
+  background-repeat: none;
+  background-position: center center;
+}
+/***********************
+POSICIONES
+***********************/
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/***********************
+DISPLAYS
+***********************/
+.dblock {
+  display: block;
+}
+.dinline {
+  display: inline;
+}
+.diblock {
+  display: inline-block;
+}
+.dtable {
+  display: table;
+}
+.dnone {
+  display: none;
+}
+/*********************
+DEGRADADOS
+(Claro a obscuro)
+*********************/
+/********** Sencillos ***********/
+/*Degradado básico de 2 colores*/
+/*Vertical*/
+/*Horizontal*/
+/*Diagonal superior*/
+/*Diagonal inferior*/
+/*Radial*/
+/********** Efectos ***********/
+/* Metal*/
+/* No funciona en IE <8*/
+/* Stripes No funciona en IE <9*/
+/*********************
+TEXTO EFECTOS
+*********************/
+/********** Efectos ***********/
+/*Normal*/
+/*Inset*/
+/*Emboss*/
+/*Brillo*/
+/*blur*/
+/*3D*/
+/*Silueta*/
+/*Drop Cap
+	Se debe definir manualmente el elemento que llevará el efecto. Esta es una muestra con <article> <p>
+*/
+/*********************
+BORDER RADIUS
+*********************/
+/*********************
+TRANSFORM
+*********************/
+/********** Bases ***********/
+/********** 2D ***********/
+/********** 3D ***********/
+/*********************
+BOX SIZING
+*********************/
+/* .boxSizing(border-box); */
+/*********************
+BOX SHADOW
+*********************/
+/********** Fuera ***********/
+/*Sombra estándar*/
+/*Sombra gruesa*/
+/*Brillo*/
+/*Dentro*/
+/*Sombra fuera y dentro*/
+/*Sombras arqueada*/
+.shadow-arc {
+  position: relative;
+}
+.shadow-arc:before,
+.shadow-arc:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.shadow-arc:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+.shadow-arc-left {
+  position: relative;
+}
+.shadow-arc-left:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.shadow-arc-right {
+  position: relative;
+}
+.shadow-arc-right:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+/*Sombra tipo monumento*/
+.shadow-monument {
+  position: relative;
+}
+.shadow-monument:before {
+  content: "";
+  position: relative\9;
+  position: absolute;
+  z-index: -1;
+  top: 84%;
+  right: 0px;
+  bottom: 0;
+  left: 0px;
+  background: #cccccc;
+  -webkit-box-shadow: 0 0 8px 1px #cccccc;
+  -moz-box-shadow: 0 0 8px 1px #cccccc;
+  -ms-box-shadow: 0 0 8px 1px #cccccc;
+  -o-box-shadow: 0 0 8px 1px #cccccc;
+  box-shadow: 0 0 8px 1px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: translate(-42px, 0) skew(72deg, 0);
+  -moz-transform: translate(-42px, 0) skew(72deg, 0);
+  -ms-transform: translate(-42px, 0) skew(72deg, 0);
+  -o-transform: translate(-42px, 0) skew(72deg, 0);
+  transform: translate(-42px, 0) skew(72deg, 0);
+}
+/*Sombra hacia los lados*/
+/*********************
+ANIMACIONES
+*********************/
+/*********************
+FORMULARIOS
+*********************/
+/*********************
+USABILIDAD
+*********************/
+/*********************
+DESARROLLO
+*********************/
+/* SEO Helper */
+/* Normalize */
+/* Reset */

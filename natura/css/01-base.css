@@ -1,0 +1,822 @@
+/*
+Nombre del sitio:	In Serie 5
+Autor:				Marco A. Hernández Pérez
+*/
+/*********************
+IMPORTS
+*********************/
+/*
+Nombre del sitio:	In serie 5.0
+Autor:				Marco Antonio Hernández Pérez
+*/
+/*********************
+COLORES
+*********************/
+.icono-facebook {
+  background: #1860aa;
+}
+.icono-facebook:hover,
+.icono-facebook:active,
+.icono-facebook:focus {
+  background: #12477d;
+}
+.icono-twitter {
+  background: #35a8e0;
+}
+.icono-twitter:hover,
+.icono-twitter:active,
+.icono-twitter:focus {
+  background: #1e8ec4;
+}
+.icono-linkedin {
+  background: #005794;
+}
+.icono-linkedin:hover,
+.icono-linkedin:active,
+.icono-linkedin:focus {
+  background: #003961;
+}
+.icono-pinterest {
+  background: #ca2027;
+}
+.icono-pinterest:hover,
+.icono-pinterest:active,
+.icono-pinterest:focus {
+  background: #9e191e;
+}
+.icono-googleplus {
+  background: #dc4e41;
+}
+.icono-googleplus:hover,
+.icono-googleplus:active,
+.icono-googleplus:focus {
+  background: #c63224;
+}
+.icono-foursquare {
+  background: #e73e71;
+}
+.icono-foursquare:hover,
+.icono-foursquare:active,
+.icono-foursquare:focus {
+  background: #d71b54;
+}
+.icono-instagram {
+  background: #c22f86;
+}
+.icono-instagram:hover,
+.icono-instagram:active,
+.icono-instagram:focus {
+  background: #99256a;
+}
+.icono-youtube {
+  background: #e52d27;
+}
+.icono-youtube:hover,
+.icono-youtube:active,
+.icono-youtube:focus {
+  background: #c21d17;
+}
+/*********************
+FORMULARIOS
+*********************/
+/*********************
+TIPOGRAFÍA
+*********************/
+/********** Tipos de letra ***********/
+@font-face {
+  font-family: 'GillSansMT';
+  src: url('GillSansMT.eot') format('embedded-opentype') format('woff'), url('GillSansMT.ttf') format('truetype'), url('GillSansMT.svg#GillSansMT') format('svg');
+}
+/*Bases*/
+.normal {
+  font-family: Arial, Verdana, "Helvetica Neue", Helvetica, sans-serif;
+}
+.gill {
+  font-family: 'GillSansMT', Times, serif;
+}
+/*text decoration*/
+.tnone {
+  text-decoration: none;
+}
+.tunder {
+  text-decoration: underline;
+}
+/* Alinear */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+/*********************
+BOTONES
+*********************/
+/*********************
+FONDOS
+*********************/
+.fsimple {
+  background-repeat: none;
+  background-position: center center;
+}
+/***********************
+POSICIONES
+***********************/
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/***********************
+DISPLAYS
+***********************/
+.dblock {
+  display: block;
+}
+.dinline {
+  display: inline;
+}
+.diblock {
+  display: inline-block;
+}
+.dtable {
+  display: table;
+}
+.dnone {
+  display: none;
+}
+/*********************
+DEGRADADOS
+(Claro a obscuro)
+*********************/
+/********** Sencillos ***********/
+/*Degradado básico de 2 colores*/
+/*Vertical*/
+/*Horizontal*/
+/*Diagonal superior*/
+/*Diagonal inferior*/
+/*Radial*/
+/********** Efectos ***********/
+/* Metal*/
+/* No funciona en IE <8*/
+/* Stripes No funciona en IE <9*/
+/*********************
+TEXTO EFECTOS
+*********************/
+/********** Efectos ***********/
+/*Normal*/
+/*Inset*/
+/*Emboss*/
+/*Brillo*/
+/*blur*/
+/*3D*/
+/*Silueta*/
+/*Drop Cap
+	Se debe definir manualmente el elemento que llevará el efecto. Esta es una muestra con <article> <p>
+*/
+/*********************
+BORDER RADIUS
+*********************/
+/*********************
+TRANSFORM
+*********************/
+/********** Bases ***********/
+/********** 2D ***********/
+/********** 3D ***********/
+/*********************
+BOX SIZING
+*********************/
+/* .boxSizing(border-box); */
+/*********************
+BOX SHADOW
+*********************/
+/********** Fuera ***********/
+/*Sombra estándar*/
+/*Sombra gruesa*/
+/*Brillo*/
+/*Dentro*/
+/*Sombra fuera y dentro*/
+/*Sombras arqueada*/
+.shadow-arc {
+  position: relative;
+}
+.shadow-arc:before,
+.shadow-arc:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.shadow-arc:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+.shadow-arc-left {
+  position: relative;
+}
+.shadow-arc-left:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.shadow-arc-right {
+  position: relative;
+}
+.shadow-arc-right:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 80%;
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px 0px #cccccc;
+  -moz-box-shadow: 0 15px 10px 0px #cccccc;
+  -ms-box-shadow: 0 15px 10px 0px #cccccc;
+  -o-box-shadow: 0 15px 10px 0px #cccccc;
+  box-shadow: 0 15px 10px 0px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+/*Sombra tipo monumento*/
+.shadow-monument {
+  position: relative;
+}
+.shadow-monument:before {
+  content: "";
+  position: relative\9;
+  position: absolute;
+  z-index: -1;
+  top: 84%;
+  right: 0px;
+  bottom: 0;
+  left: 0px;
+  background: #cccccc;
+  -webkit-box-shadow: 0 0 8px 1px #cccccc;
+  -moz-box-shadow: 0 0 8px 1px #cccccc;
+  -ms-box-shadow: 0 0 8px 1px #cccccc;
+  -o-box-shadow: 0 0 8px 1px #cccccc;
+  box-shadow: 0 0 8px 1px #cccccc;
+  behavior: url(PIE.htc);
+  -webkit-transform: translate(-42px, 0) skew(72deg, 0);
+  -moz-transform: translate(-42px, 0) skew(72deg, 0);
+  -ms-transform: translate(-42px, 0) skew(72deg, 0);
+  -o-transform: translate(-42px, 0) skew(72deg, 0);
+  transform: translate(-42px, 0) skew(72deg, 0);
+}
+/*Sombra hacia los lados*/
+/*********************
+ANIMACIONES
+*********************/
+/*********************
+FORMULARIOS
+*********************/
+/*********************
+USABILIDAD
+*********************/
+/*********************
+DESARROLLO
+*********************/
+/* SEO Helper */
+/* Normalize */
+/* Reset */
+/*********************
+ESTILOS GENERALES
+*********************/
+body {
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+  color: #000000;
+  font-family: 'GillSansMT', Times, serif;
+}
+img {
+  max-width: 100%;
+}
+/******* Tipografía ******/
+/******* Links ******/
+a,
+a:visited {
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
+}
+*:focus {
+  outline: none;
+}
+/******* Listas ******/
+ul li a,
+ul li a:visited {
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
+}
+/******* Tablas ******/
+/******* Forms ******/
+.radio-button label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+}
+.radio-button label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  background-color: #ffffff;
+  border: 1px solid #6d6e71;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+  behavior: url(PIE.htc);
+}
+.radio-button input[type=radio] {
+  display: none;
+}
+.radio-button input[type=radio]:checked + label:before {
+  content: "\2022";
+  color: #7f8082;
+  font-size: 3.6rem;
+  text-align: center;
+  line-height: 1.8rem;
+}
+.checkbox {
+  padding-left: 0;
+}
+.checkbox label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+}
+.checkbox label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  background-color: #ffffff;
+  border: 1px solid #6d6e71;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  behavior: url(PIE.htc);
+}
+.checkbox input[type=radio],
+.checkbox input[type=checkbox] {
+  display: none;
+}
+.checkbox input[type=checkbox]:checked + label:before {
+  content: "";
+  background: url(../images/check.svg) center center no-repeat;
+  background-size: auto;
+  text-align: center;
+}
+.upload-file .titulo-carga {
+  padding-top: 8px;
+}
+.upload-file .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.upload-file .inputfile + label {
+  padding: 0;
+  max-width: 80%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6d6e71;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.upload-file .inputfile + label .archivo-subido {
+  padding: 0.625rem 1.25rem;
+  width: auto;
+  min-height: 2em;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  padding-left: 0;
+  font-style: italic;
+  color: #7f8082;
+}
+.upload-file .inputfile + label .seleccionar {
+  padding: 0.625rem 1.25rem;
+  height: 100%;
+  color: #ffffff;
+  background-color: #000000;
+  display: inline-block;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+.upload-file .inputfile:focus + label,
+.upload-file .inputfile.has-focus + label,
+.upload-file .inputfile + label:hover {
+  outline: -webkit-focus-ring-color auto 0px;
+  outline: 0!important;
+  outline: none!important;
+}
+.upload-file .inputfile:focus + label .seleccionar,
+.upload-file .inputfile.has-focus + label .seleccionar,
+.upload-file .inputfile + label:hover .seleccionar {
+  background-color: #6d6e71;
+  color: #ffffff;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+.upload-file .no-js .inputfile + label {
+  display: none;
+}
+/*********************
+SLIDER
+*********************/
+#slider {
+  margin-bottom: ;
+  /*************** Indicadores ***************/
+  /*************** Efectos ***************/
+}
+#slider .carousel-indicators {
+  margin-left: 0;
+  left: ;
+  right: ;
+  bottom: ;
+  width: auto;
+}
+#slider .carousel-indicators li {
+  margin-right: 6px;
+  width: 15px;
+  height: 15px;
+  background: #7f8082;
+  border: ;
+}
+#slider .carousel-indicators .active {
+  background: #ffffff;
+  border: ;
+}
+#slider.color .item img {
+  filter: alpha(opacity=0.3);
+  /* internet explorer */
+  -khtml-opacity: 0.3;
+  /* khtml, old safari */
+  -moz-opacity: 0.3;
+  /* mozilla, netscape */
+  opacity: 0.3;
+  /* fx, safari, opera */
+}
+/*************** Slides ***************/
+.item {
+  background: #000000;
+}
+.item .texto {
+  padding: 10px 15px;
+  background: #6d6e71;
+  text-align: center;
+}
+.item h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.item p {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+.item figure {
+  overflow-y: hidden;
+  text-align: center;
+  max-height: 550px;
+}
+.item img {
+  width: 100%;
+}
+/*********************
+TABS
+*********************/
+/*************** Botones ***************/
+.nav-tabs {
+  border-bottom: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  behavior: url(PIE.htc);
+  padding: ;
+  background: ;
+  color: ;
+  width: ;
+  font-size: ;
+}
+.nav-tabs li a:hover,
+.nav-tabs li a:active,
+.nav-tabs li a:focus {
+  border: 0;
+  background: ;
+  color: ;
+}
+.nav-tabs li.active a {
+  border: 0;
+  background: ;
+  color: ;
+}
+.nav-tabs li.active a:hover,
+.nav-tabs li.active a:active,
+.nav-tabs li.active a:focus {
+  border: 0;
+  background: ;
+  color: ;
+}
+/*************** Contenido ***************/
+/*********************
+UTILIDADES
+*********************/
+::selection {
+  color: #ffffff;
+  background-color: #000000;
+}
+::-moz-selection {
+  color: #ffffff;
+  background-color: #000000;
+}
+::-webkit-selection {
+  color: #ffffff;
+  background-color: #000000;
+}
+/*************** Iframe ***************/
+.iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*************** Botones ***************/
+.boton-cont {
+  text-align: center;
+}
+.boton {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.boton:hover,
+.boton:active,
+.boton:focus {
+  color: #edeff2;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.boton.color {
+  background: ;
+}
+.boton.color:hover,
+.boton.color:active,
+.boton.color:focus {
+  color: ;
+}
+/*************** Botones de redes sociales ***************/
+.iconos-redes {
+  /* Ligas */
+  /* Vectores */
+}
+.iconos-redes a:link,
+.iconos-redes a:visited {
+  display: table;
+  text-align: center;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+  padding: 2px;
+  background: ;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+  behavior: url(PIE.htc);
+}
+.iconos-redes a:link:hover,
+.iconos-redes a:visited:hover,
+.iconos-redes a:link:active,
+.iconos-redes a:visited:active,
+.iconos-redes a:link:focus,
+.iconos-redes a:visited:focus {
+  background: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+.iconos-redes svg {
+  display: table-cell;
+  vertical-align: center;
+  width: px;
+  height: px;
+}
+.iconos-redes svg .icono {
+  fill: ;
+}
+/*********************
+HEADER
+*********************/
+header {
+  background: url('../images/fondo-header.jpg') center top no-repeat;
+}
+header .navbar-brand {
+  padding: 6px 15px;
+  height: auto;
+}
+header .navbar-default {
+  margin-bottom: 0;
+  background-color: transparent;
+  border: 0;
+}
+header .navbar-default .navbar-collapse {
+  margin: 0 -15px;
+}
+header .navbar-default .navbar-nav {
+  margin: 0 -15px;
+}
+header .navbar-default .navbar-nav li a:link,
+header .navbar-default .navbar-nav li a:visited {
+  padding-left: 30px;
+  padding-right: 30px;
+  background: ;
+  color: ;
+  font-size: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+header .navbar-default .navbar-nav li a:link:hover,
+header .navbar-default .navbar-nav li a:visited:hover,
+header .navbar-default .navbar-nav li a:link:active,
+header .navbar-default .navbar-nav li a:visited:active,
+header .navbar-default .navbar-nav li a:link:focus,
+header .navbar-default .navbar-nav li a:visited:focus {
+  background: #a7a9ac;
+  color: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+header .navbar-default .navbar-nav li.active {
+  border-bottom: 2px solid #a7a9ac;
+}
+header .navbar-default .navbar-toggle {
+  background: ;
+  border: ;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  behavior: url(PIE.htc);
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+header .navbar-default .navbar-toggle .icon-bar {
+  background: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+header .navbar-default .navbar-toggle:hover {
+  background: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+header .navbar-default .navbar-toggle:hover .icon-bar {
+  background: ;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out;
+}
+/* 
+UNO
+=============================================================
+*/
+/*********************
+DOS
+*********************/
+/*************** Tres ***************/
+/*========= Cuatro =========*/
+/*::::: Cinco :::::*/
+/*··· Seis ···*/
+/*********************
+FOOTER
+*********************/

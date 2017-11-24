@@ -1,0 +1,1075 @@
+/*
+Nombre del sitio:	In serie 5.0
+Autor:				Marco Antonio Hernández Pérez
+*/
+
+/*********************
+COLORES
+*********************/
+// Colores del sitio
+@negro:		rgba(0,0,0,1);
+@blanco:	#ffffff;
+@rojo:		red;
+
+@gris-100: #000000;
+@gris-80: #6d6e71;
+@gris-60: #7f8082;
+@gris-40: #a7a9ac;
+@gris-20: #edeff2;
+
+@marron: #9F5E58;
+
+// Redes sociales
+@facebook: #1860aa;
+@twitter: #35a8e0;
+@linkedin: #005794;
+@pinterest: #ca2027;
+@googleplus: #dc4e41;
+@foursquare: #e73e71;
+@instagram: #c22f86;
+@youtube: #e52d27;
+
+// Íconos
+.icono-facebook {
+	background: @facebook;
+
+	&:hover, &:active, &:focus {
+		background: darken(@facebook, 10%); 
+	}
+}
+
+.icono-twitter {
+	background: @twitter;
+
+		&:hover, &:active, &:focus {
+		background: darken(@twitter, 10%); 
+	}
+}
+
+.icono-linkedin {
+	background: @linkedin;
+
+		&:hover, &:active, &:focus {
+		background: darken(@linkedin, 10%); 
+	}
+}
+
+.icono-pinterest {
+	background: @pinterest;
+
+		&:hover, &:active, &:focus {
+		background: darken(@pinterest, 10%); 
+	}
+}
+
+.icono-googleplus {
+	background: @googleplus;
+
+		&:hover, &:active, &:focus {
+		background: darken(@googleplus, 10%); 
+	}
+}
+
+.icono-foursquare {
+	background: @foursquare;
+
+		&:hover, &:active, &:focus {
+		background: darken(@foursquare, 10%); 
+	}
+}
+
+.icono-instagram {
+	background: @instagram;
+
+		&:hover, &:active, &:focus {
+		background: darken(@instagram, 10%); 
+	}
+}
+
+.icono-youtube {
+	background: @youtube;
+
+		&:hover, &:active, &:focus {
+		background: darken(@youtube, 10%); 
+	}
+}
+
+// Texto de selección
+.text-selection (@color: @blanco, @fondo:@azul) {
+    ::selection {
+	    color: @color;
+		background-color: @fondo;
+    }
+
+    ::-moz-selection {
+    	color: @color;
+		background-color: @fondo;
+    }
+
+    ::-webkit-selection {
+        color: @color;
+		background-color: @fondo;
+    }
+
+}
+
+// Transparencia
+.opacity (@trans: 1) {
+    filter: alpha(opacity=@trans); /* internet explorer */
+    -khtml-opacity: @trans;      /* khtml, old safari */
+    -moz-opacity: @trans;       /* mozilla, netscape */
+    opacity: @trans;           /* fx, safari, opera */
+}
+
+// Liga de imágenes
+// @path '';
+
+/*********************
+FORMULARIOS
+*********************/
+// Radio buttons personalizados
+.input-radio (
+		@dimensiones: 20px;
+		@fondo: @blanco;
+		@border: 1px;
+		@border-color: @gris-80;
+
+		@relleno: @gris-60;
+		@relleno-tam: 3.6rem;
+		@relleno-pos: 1.8rem;
+	) {
+
+	.radio-button {
+		label {
+		    display: inline-block;
+		    cursor: pointer;
+		    position: relative;
+		    padding-left: 25px;
+
+		    &:before {
+		    	content: "";
+			    display: inline-block;
+			    width: @dimensiones;
+			    height: @dimensiones;
+			    position: absolute;
+			    left: 0;
+			    top: -10px;
+			    background-color: @fondo;
+			    border: @border solid @border-color;
+			    .border-radius(200px);
+		    }
+		}
+
+		input[type=radio] {
+			display: none;
+		}
+
+		input[type=radio]:checked + label:before {
+		    content: "\2022";
+		    color: @relleno;
+		    font-size: @relleno-tam;
+		    text-align: center;
+		    line-height: @relleno-pos;
+		}
+	}
+}
+
+// Checkbox
+.input-checkbox (
+		@dimensiones: 20px;
+		@fondo: @blanco;
+		@border: 1px;
+		@border-color: @gris-80;
+		@border-radius: 2px;
+
+		@imagen: url(../images/check.svg);
+		@imagen-tam: auto;
+	) {
+
+	.checkbox {
+		padding-left: 0;
+
+		label {
+		    display: inline-block;
+		    cursor: pointer;
+		    position: relative;
+		    padding-left: 25px;
+
+		    &:before {
+			    content: "";
+			    display: inline-block;
+			    width: @dimensiones;
+			    height: @dimensiones;
+			    position: absolute;
+			    left: 0;
+			    top: -10px;
+			    background-color: @fondo;
+			    border: @border solid @border-color;
+			    .border-radius(@border-radius);
+			}
+		}
+
+		input[type=radio], input[type=checkbox] {
+			display: none;
+		}
+
+		input[type=checkbox]:checked + label:before {
+		    content: "";
+			background: @imagen center center no-repeat;
+			background-size: @imagen-tam;
+		    // color: @relleno;
+		    // font-size: @relleno-tam;
+		    text-align: center;
+		    // line-height: @relleno-pos;
+		}
+	}
+
+}
+
+// Input file
+.input-file (
+	@titulo-color: @gris-80;
+	@archivo-color: @gris-60;
+
+	@sel-fondo: @negro;
+	@sel-texto: @blanco;
+	@sel-texto-hover: @gris-80;
+	
+	) {
+	.upload-file {
+		.titulo-carga {
+			padding-top: 8px;
+	    }
+
+		.inputfile {
+		    width: 0.1px;
+		    height: 0.1px;
+		    opacity: 0;
+		    overflow: hidden;
+		    position: absolute;
+		    z-index: -1;
+
+		    &+label {
+		    	padding: 0;
+		    	max-width: 80%;
+			    font-size: 1.5rem;
+			    font-weight: 700;
+			    color: @titulo-color;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			    cursor: pointer;
+			    display: inline-block;
+			    overflow: hidden;
+
+			    .archivo-subido {
+					padding: 0.625rem 1.25rem;
+					width: auto;
+				    min-height: 2em;
+				    display: block;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+				    overflow: hidden;
+				    vertical-align: top;
+				    padding-left: 0;
+				    font-style: italic;
+				    color: @archivo-color;
+			    }
+
+			    .seleccionar {
+					padding: 0.625rem 1.25rem;
+					height: 100%;
+				    color: @sel-texto;
+				    background-color: @sel-fondo;
+				    display: inline-block;
+				    .transition(background);
+			    }
+		    }
+
+		    &:focus + label,
+			&.has-focus + label,
+			&+label:hover {
+			    outline: -webkit-focus-ring-color auto 0px;
+			    outline: 0!important;
+				outline: none!important;
+			}
+
+			&:focus + label .seleccionar,
+			&.has-focus + label .seleccionar,
+			& + label:hover .seleccionar {
+			    background-color: @sel-texto-hover;
+			    color: @sel-texto;
+			    .transition(background);
+			}
+
+		}
+
+		.no-js .inputfile + label {
+		    display: none;
+		}
+	}
+}
+
+/*********************
+TIPOGRAFÍA
+*********************/
+/********** Tipos de letra ***********/
+// @font-face {
+// 	font-family: 'Gill Sans MT';
+// 	src: url('../fonts/GillSansMT.eot');
+// 	src: url('../fonts/GillSansMT.eot?#iefix') format('embedded-opentype'),
+// 		url('../fonts/GillSansMT.woff') format('woff'),
+// 		url('../fonts/GillSansMT.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+@font-face {
+	font-family: 'Gill Sans MT Pro';
+	src: url('../fonts/GillSansMTPro-Light.eot');
+	src: url('../fonts/GillSansMTPro-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GillSansMTPro-Light.woff') format('woff'),
+		url('../fonts/GillSansMTPro-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+
+/*Bases*/
+.normal { 
+	font-family: Arial, Verdana, "Helvetica Neue", Helvetica, sans-serif; 
+}
+
+.gill {
+	font-family: 'Gill Sans MT', Helvetica, Verdana, Arial;
+}
+
+.glight {
+	font-family: 'Gill Sans MT Pro', Helvetica, Verdana, Arial;
+}
+
+/*text decoration*/
+.tnone {
+	text-decoration:none;
+}
+
+.tunder {
+	text-decoration:underline;
+}
+
+/* Alinear */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/*********************
+BOTONES
+*********************/
+@ligas: '&:hover, &:active, &:focus';
+
+/*********************
+FONDOS
+*********************/
+.fsimple {
+	background-repeat: none;
+	background-position: center center;
+}
+
+/***********************
+POSICIONES
+***********************/
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.position (@top: auto, @right: auto, @bottom: auto, @left: auto) {
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-both {
+	// Posicionar el padre en position: relative;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/***********************
+DISPLAYS
+***********************/
+.dblock {
+	display: block;
+}
+
+.dinline {
+	display: inline;
+}
+
+.diblock {
+	display: inline-block;
+}
+
+.dtable {
+	display: table;
+}
+
+.dnone {
+	display: none;
+}
+
+/*********************
+DEGRADADOS
+(Claro a obscuro)
+*********************/
+/********** Sencillos ***********/
+/*Degradado básico de 2 colores*/
+.grad(@grados, @from:#fcfcfc, @to: #d3d3d3){
+	background-color: @to;
+	background-image: -webkit-linear-gradient(@grados, @from, @to);
+	background-image: -moz-linear-gradient(@grados, @from, @to);
+	background-image: -o-linear-gradient(@grados, @from, @to);
+	background-image: -ms-linear-gradient(@grados, @from, @to);
+	background-image: linear-gradient(@grados, @from, @to);
+	-pie-background:linear-gradient(@grados, @from, @to);
+	behavior: url(PIE.htc);
+}
+/*Vertical*/
+.grad-vertical(@from:#fcfcfc, @to: #d3d3d3) {
+	background-color: @to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(top, @from, @to);
+	background-image: -moz-linear-gradient(top, @from, @to);
+	background-image: -o-linear-gradient(top, @from, @to);
+	background-image: -ms-linear-gradient(top, @from, @to);
+	background-image: linear-gradient(top, @from, @to);
+	-pie-background:linear-gradient(top, @from, @to);
+	behavior: url(PIE.htc);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@from,@to));
+}
+
+/*Horizontal*/
+.grad-horizontal(@from:#fcfcfc, @to: #d3d3d3) {
+	// background-color: @to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(left, @from, @to);
+	background-image: -moz-linear-gradient(left, @from, @to);
+	background-image: -o-linear-gradient(left, @from, @to);
+	background-image: -ms-linear-gradient(left, @from, @to);
+	background-image: linear-gradient(left, @from, @to);
+	-pie-background:linear-gradient(left, @from, @to);
+	behavior: url(PIE.htc);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@from,@to));
+}
+
+/*Diagonal superior*/
+.grad-angle-top(@from:#fcfcfc, @to: #d3d3d3) {
+	background-color: @to;
+	background-image: -webkit-gradient(linear, left bottom, right top, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(45deg, @from, @to);
+	background-image: -moz-linear-gradient(45deg, @from, @to);
+	background-image: -o-linear-gradient(45deg, left, @from, @to);
+	background-image: -ms-linear-gradient(45deg, @from, @to);
+	background-image: linear-gradient(45deg, @from, @to);
+	-pie-background:linear-gradient(45deg, @from, @to);
+	behavior: url(PIE.htc);
+}
+
+/*Diagonal inferior*/
+.grad-angle-bottom(@from:#fcfcfc, @to: #d3d3d3) {
+	background-color: @to;
+	background-image: -webkit-gradient(linear, left top, right bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(-45deg, @from, @to);
+	background-image: -moz-linear-gradient(-45deg, @from, @to);
+	background-image: -o-linear-gradient(-45deg, @from, @to);
+	background-image: -ms-linear-gradient(-45deg, @from, @to);
+	background-image: linear-gradient(135deg, @from, @to);
+	-pie-background:linear-gradient(-45deg, @from, @to);
+	behavior: url(PIE.htc);
+}
+
+/*Radial*/
+.grad-radial(@from:#fcfcfc, @to: #d3d3d3) {
+	background-color: @to;
+	background-image: -webkit-gradient(radial, center center, from(@from), to(@to));
+	background-image: -webkit-radial-gradient(center, ellipse cover, @from, @to);
+	background-image: -moz-radial-gradient(center, ellipse cover, @from, @to);
+	background-image: -o-radial-gradient(center, ellipse cover, @from, @to);
+	background-image: -ms-radial-gradient(center, ellipse cover, @from, @to);
+	background-image: radial-gradient(ellipse at center, @from, @to);
+	-pie-background:linear-gradient(left, @to, @from, @to);
+	behavior: url(PIE.htc);
+}
+
+/********** Efectos ***********/
+/* Metal*/
+.grad-metal(@a:#ffffff 0%, @b:#f1f1f1 50%, @c:#e1e1e1 51%, @d: #f6f6f6 100%) {
+	background-color: @b;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(@a), color-stop(@b), color-stop(@c), color-stop(@d));
+	background-image: -webkit-linear-gradient(top, @a,@b, @c, @d);
+	background-image: -moz-linear-gradient(top, @a,@b, @c, @d);
+	background-image: -o-linear-gradient(top, @a,@b, @c, @d);
+	background-image: -ms-linear-gradient(top, @a,@b, @c, @d);
+	background-image: linear-gradient(top, @a,@b, @c, @d);
+	-pie-background:linear-gradient(top, @a,@b, @c, @d);
+	behavior: url(PIE.htc);
+}
+
+/* No funciona en IE <8*/
+.grad-metal-angle(@grados:-45deg, @a:rgba(255,255,255,0.6), @b:rgba(255,255,255,0)) {
+	background-color: @b;
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(@a 0%), color-stop(@b 16%), color-stop(@a 33%), color-stop(@b 50%), color-stop(@a 57%), color-stop(@b 84%), color-stop(@a 100%));
+	background-image: -webkit-linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	background-image: -moz-linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	background-image: -o-linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	background-image: -ms-linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	background-image: linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	-pie-background:linear-gradient(@grados, @a 0%, @b 16%, @a 33%, @b 50%, @a 57%, @b 84%, @a 100%);
+	behavior: url(PIE.htc);
+}
+
+/* Stripes No funciona en IE <9*/
+.grad-stripe(@grados:0deg, @a:rgba(255,255,255,0.2) 50%, @b:transparent 50%, @c:transparent){
+	background-size: 5px 5px;
+	background-image: -webkit-linear-gradient(@grados, @a, @b, @c);
+	background-image: -moz-linear-gradient(@grados, @a, @b, @c);
+	background-image: -ms-linear-gradient(@grados, @a, @b, @c); 
+	background-image: -o-linear-gradient(@grados, @a, @b, @c); 
+	background-image: linear-gradient(@grados, @a, @b, @c); 
+}
+
+.grad-stripe-angle(@grados:45deg, @a:rgba(255,255,255,0.4) 25%, @b:transparent 25%, @c:transparent 50%, @d:rgba(255,255,255,0.4) 50%, @e:rgba(255,255,255,0.4) 75%, @f:transparent 75%, @g:transparent){
+	background-size: 6px 6px;
+	background-image: -webkit-linear-gradient(@grados, @a, @b, @c, @d, @e, @f, @g);
+	background-image: -moz-linear-gradient(@grados, @a, @b, @c, @d, @e, @f, @g);
+	background-image: -ms-linear-gradient(@grados, @a, @b, @c, @d, @e, @f, @g); 
+	background-image: -o-linear-gradient(@grados, @a, @b, @c, @d, @e, @f, @g); 
+	background-image: linear-gradient(@grados, @a, @b, @c, @d, @e, @f, @g); 
+}
+
+/*********************
+TEXTO EFECTOS
+*********************/
+/********** Efectos ***********/
+/*Normal*/
+.text-shadow  (@h:-2px, @v:2px, @blur:2px, @color:lighten(@negro, 70%)){
+	text-shadow:@h @v @blur @color;
+}
+
+/*Inset*/
+.text-shadow-inset (@a:#333, @b:#666){
+    text-shadow:
+		0px -1px 0px @a,
+        0px 1px 3px @b;
+}
+
+/*Emboss*/
+.text-emboss(@opacity:0.3, @x:1px, @y:1px, @radius:1px) {
+	opacity:@opacity;
+	text-shadow:
+		@x @y @radius @blanco,
+		-1px  -1px @radius @negro;
+}
+/*Brillo*/
+.text-glow(@color:@blanco, @radius:5px) {
+	text-shadow:
+		0 0 @radius @blanco,
+		0 0 @radius+10 @blanco,
+		0 0 @radius+15 @color,
+		0 0 @radius+20 @color,
+}
+
+/*blur*/
+.text-blur(@color:@negro, @radius:4px) {
+	color:transparent;
+	text-shadow:
+		0 0 @radius @color,
+		0 0 @radius+4 @color,
+		0 0 @radius+8 @color,
+}
+
+/*3D*/
+.text-shadow-3d (@color:@negro) {
+	text-shadow:
+		0 1px 0 lighten(@color, 60%),
+		0 2px 0 lighten(@color, 57%),
+		0 3px 0 lighten(@color, 54%),
+		0 4px 0 lighten(@color, 51%),
+		0 5px 0 lighten(@color, 49%),
+		0 6px 1px rgba(0,0,0,.1),
+		0 0 5px rgba(0,0,0,.1),
+		0 1px 3px rgba(0,0,0,.3),
+		0 3px 5px rgba(0,0,0,.2),
+		0 5px 10px rgba(0,0,0,.25),
+		0 10px 10px rgba(0,0,0,.2),
+		0 20px 20px rgba(0,0,0,.15);
+}
+
+.text-shadow-hard (@color:lighten(@negro, 50%), @depth:0px) {
+	text-shadow:
+		0 @depth + 1px 0 (@color),
+		0 @depth + 2px 0 (@color),
+		0 @depth + 3px 0 (@color),
+		0 @depth + 4px 0 (@color),
+		0 @depth + 5px 0 (@color),
+		0 @depth + 6px 1px rgba(0,0,0,.1),
+		0 0 5px rgba(0,0,0,.1),
+		0 1px 3px rgba(0,0,0,.3),
+		0 3px 5px rgba(0,0,0,.2),
+		0 5px 10px rgba(0,0,0,.25),
+		0 10px 10px rgba(0,0,0,.2),
+		0 20px 20px rgba(0,0,0,.15);
+}
+
+/*Silueta*/
+.text-sil (@back:@blanco, @color:lighten(@negro, 70%), @depth:1px) {
+	text-shadow:
+		@depth @depth 0px @back,
+		@depth+2 @depth+2 0px @color;
+}
+
+/*Drop Cap
+	Se debe definir manualmente el elemento que llevará el efecto. Esta es una muestra con <article> <p>
+*/
+
+// article p:first-child:first-letter {	
+// 	font-size:3.3em;
+// 	float: left;
+// 	margin: 10px 10px 0 0; 
+// 	line-height: 0.8;
+// }
+
+/*********************
+BORDER RADIUS
+*********************/
+.circle(@radius: 200px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+      -ms-border-radius: @radius;
+       -o-border-radius: @radius;
+          border-radius: @radius;
+		  	behavior: url(PIE.htc);
+}
+
+.border-radius(@radius: 6px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+      -ms-border-radius: @radius;
+       -o-border-radius: @radius;
+          border-radius: @radius;
+		  	behavior: url(PIE.htc);
+}
+
+.border-radius-left(@radius: 6px) {
+	-webkit-border-bottom-left-radius: @radius;
+  	   -webkit-border-top-left-radius: @radius;
+		-moz-border-radius-bottomleft: @radius;
+		   -moz-border-radius-topleft: @radius;
+			border-bottom-left-radius: @radius;
+			   border-top-left-radius: @radius;
+}
+
+.border-radius-right(@radius: 6px) {
+	-webkit-border-bottom-right-radius: @radius;
+  	   -webkit-border-top-right-radius: @radius;
+		-moz-border-radius-bottomright: @radius;
+		   -moz-border-radius-topright: @radius;
+			border-bottom-right-radius: @radius;
+			   border-top-right-radius: @radius;
+}
+
+.border-radius-bottom(@radius: 6px) {
+	-webkit-border-bottom-right-radius: @radius;
+	 -webkit-border-bottom-left-radius: @radius;
+	    -moz-border-radius-bottomright: @radius;
+	     -moz-border-radius-bottomleft: @radius;
+	        border-bottom-right-radius: @radius;
+	         border-bottom-left-radius: @radius;
+}
+
+.border-radius-top(@radius: 6px) {
+	-webkit-border-top-right-radius: @radius;
+	 -webkit-border-top-left-radius: @radius;
+	    -moz-border-radius-topright: @radius;
+	     -moz-border-radius-topleft: @radius;
+	        border-top-right-radius: @radius;
+	         border-top-left-radius: @radius;
+}
+
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	  -o-border-radius: @topleft @topright @bottomright @bottomleft;
+         border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+/*********************
+TRANSFORM
+*********************/
+/********** Bases ***********/
+.transform-origin (@arguments) {
+	-webkit-transform-origin: @arguments;
+	-moz-transform-origin: @arguments;
+	-ms-transform-origin: @arguments;
+	transform-origin: @arguments;
+}
+
+.transform-style(@style) {
+	-webkit-transform-style: @style;
+	-o-transform-style: @style;
+	transform-style: @style;
+}
+
+.perspective-origin (@arguments) {
+	-webkit-perspective-origin: @arguments;
+	perspective-origin: @arguments;
+}
+
+.backface-visibility(@visibility){
+    -webkit-backface-visibility: @visibility;
+    backface-visibility: @visibility;
+}
+/********** 2D ***********/
+.rotate  (@deg:45deg){
+	-webkit-transform: rotate(@deg);
+	   -moz-transform: rotate(@deg);
+	    -ms-transform: rotate(@deg);
+	     -o-transform: rotate(@deg);
+	        transform: rotate(@deg);
+}
+
+.skew  (@h:0deg, @v:0deg){
+	-webkit-transform: skew(@h, @v);
+	   -moz-transform: skew(@h, @v);
+	    -ms-transform: skew(@h, @v);
+	     -o-transform: skew(@h, @v);
+	        transform: skew(@h, @v);
+}
+
+.translate(@x:0, @y:0) {
+	-webkit-transform: translate(@x, @y);
+	   -moz-transform: translate(@x, @y);
+	    -ms-transform: translate(@x, @y);
+	     -o-transform: translate(@x, @y);
+	        transform: translate(@x, @y);
+}
+
+.perspective (@perspective) {
+	-webkit-perspective: @perspective;
+	perspective: @perspective;
+}
+
+.scale (@scale) {
+	-webkit-transform: scale(@scale);
+	-moz-transform: scale(@scale);
+	-ms-transform: scale(@scale);
+	transform: scale(@scale);
+}
+
+.transform (@x:0, @y:0, @h:0deg, @v:0deg) {
+		-webkit-transform:  translate(@x, @y) skew(@h, @v);
+		-moz-transform:  translate(@x, @y) skew(@h, @v);
+		-ms-transform:  translate(@x, @y) skew(@h, @v);
+		-o-transform:  translate(@x, @y) skew(@h, @v);
+	         transform:  translate(@x, @y) skew(@h, @v);
+}
+
+/********** 3D ***********/
+.rotate3d (@deg1, @deg2:0, @deg3:0){
+	-webkit-transform: rotateX(@deg1) rotateY(@deg2) rotateZ(@deg3);
+	transform: rotateX(@deg1) rotateY(@deg2) rotateZ(@deg3);
+	}
+
+/*********************
+BOX SIZING
+*********************/
+/* .boxSizing(border-box); */
+.boxSizing(@type: border-box) {
+	-webkit-box-sizing: @type;
+	   -moz-box-sizing: @type;
+		-ms-box-sizing: @type;
+	     -o-box-sizing: @type; 
+			box-sizing: @type; 
+}
+
+/*********************
+BOX SHADOW
+*********************/
+/********** Fuera ***********/
+/*Sombra estándar*/
+.shadow(@x: -5px, @y: 5px, @radius: 8px, @spread: 0px, @color: rgba(0,0,0,0.7)) {
+	-webkit-box-shadow: @x @y @radius @spread @color;
+	   -moz-box-shadow: @x @y @radius @spread @color;
+		-ms-box-shadow: @x @y @radius @spread @color;
+	     -o-box-shadow: @x @y @radius @spread @color; 
+			box-shadow: @x @y @radius @spread @color; 
+			behavior: url(PIE.htc);
+}
+
+/*Sombra gruesa*/
+.shadow-hard(@x: -4px, @y: 4px, @radius: 1px, @spread: 0px, @color: lighten(@negro, 80%)) {
+	-webkit-box-shadow: @x @y @radius @spread @color;
+	   -moz-box-shadow: @x @y @radius @spread @color;
+		-ms-box-shadow: @x @y @radius @spread @color;
+	     -o-box-shadow: @x @y @radius @spread @color; 
+			box-shadow: @x @y @radius @spread @color;
+			behavior: url(PIE.htc);
+}
+
+/*Brillo*/
+.glow(@x: 0, @y: 0, @radius: 15px, @spread: 3px, @color: rgba(0,0,0,0.4)) {
+	-webkit-box-shadow: @x @y @radius @spread @color;
+	   -moz-box-shadow: @x @y @radius @spread @color;
+		-ms-box-shadow: @x @y @radius @spread @color;
+	     -o-box-shadow: @x @y @radius @spread @color; 
+			box-shadow: @x @y @radius @spread @color;
+			behavior: url(PIE.htc);
+}
+
+/*Dentro*/
+.shadow-inset(@x:0, @y:0, @radius:18px, @spread:0, @color: rgba(0,0,0,0.1) inset) {
+	-webkit-box-shadow:@x @y @radius @spread @color;
+	   -moz-box-shadow:@x @y @radius @spread @color;
+		-ms-box-shadow:@x @y @radius @spread @color;
+	     -o-box-shadow:@x @y @radius @spread @color; 
+			box-shadow:@x @y @radius @spread @color; 
+}
+
+/*Sombra fuera y dentro*/
+.shadow-and-inset (@top:0px, @right:0, @bottom:0px, @left:0) {
+  	position:relative;
+	.shadow;
+	
+	&:before {
+		content:"";
+		position:absolute;
+		top:@top;
+		right:@right;
+		bottom:@bottom;
+		left:@left;
+		.shadow-inset;
+	}
+}
+
+/*Sombras arqueada*/
+.shadow-arc {
+	position:relative;
+	
+	&:before, &:after {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 80%;
+		bottom: 15px;
+		left: 10px;
+		width: 50%;
+		max-width:300px;
+		.shadow(0, 15px, 10px);
+		.rotate(-3deg);
+	}
+	
+	&:after {
+		right: 10px;
+		left: auto;
+		.rotate(3deg);
+	}
+}
+
+.shadow-arc-left {
+	position:relative;
+	
+	&:before {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 80%;
+		bottom: 15px;
+		left: 10px;
+		width: 50%;
+		max-width:300px;
+		.shadow(0, 15px, 10px);
+		.rotate(-3deg);
+	}
+}
+
+.shadow-arc-right {
+	position:relative;
+	
+	&:after {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 80%;
+		bottom: 15px;
+		right: 10px;
+		left:auto;
+		width: 50%;
+		max-width:300px;
+		.shadow(0, 15px, 10px);
+		.rotate(3deg);
+	}
+}
+/*Sombra tipo monumento*/
+.shadow-monument {
+  	position:relative;
+	
+	&:before {
+		content:"";
+		position:relative\9;
+		position:absolute;
+		z-index:-1;
+		top:84%;
+		right:0px;
+		bottom:0;
+		left:0px;
+		background:lighten(@negro, 80%);
+		.shadow(0, 0, 8px, 1px);
+		.transform(-42px, 0, 72deg, 0);
+	}
+}
+
+/*Sombra hacia los lados*/
+.shadow-sides (@top:10px, @right:0, @bottom:10px, @left:0) {
+  	position:relative;
+	
+	&:before {
+		content:"";
+		position:absolute;
+		z-index:-1;
+		top:@top;
+		right:@right;
+		bottom:@bottom;
+		left:@left;
+		background:lighten(@negro, 80%);
+		.shadow(0, 0, 18px, 4px);
+	}
+}
+
+/*********************
+ANIMACIONES
+*********************/
+.transition(@property:all, @duration:0.3s, @ease:ease-out) {
+	-webkit-transition: @property @duration @ease;
+	-moz-transition: @property @duration @ease;
+	  -o-transition: @property @duration @ease;
+	     transition: @property @duration @ease;
+}
+
+.animation (@arguments) {
+	-webkit-animation: @arguments;
+	animation: @arguments;
+	}
+
+/*********************
+FORMULARIOS
+*********************/
+.placeholder(@color: @blanco) {
+    :-moz-placeholder {
+	    color: @color;
+    }
+
+    ::-moz-placeholder {
+    	color: @color;
+    }
+
+    ::-webkit-input-placeholder {
+        color: @color;
+    }
+
+    :-ms-input-placeholder {
+    	color: @color;
+    }
+}
+
+/*********************
+USABILIDAD
+*********************/
+// Sirve para bloquear la selección de elementos
+.user-select (@select){
+	-webkit-user-select: @select;
+     -khtml-user-select: @select;
+       -moz-user-select: @select;
+         -o-user-select: @select;
+            user-select: @select; 
+}
+
+/*********************
+DESARROLLO
+*********************/
+/* SEO Helper */
+.seo-helper () {
+	img:not([alt]), img[alt=""], img[alt^=" "],
+	a[href=""], a[href^=" "], a[href="#"], a[rel*="nofollow"],
+	div:empty, span:empty, li:empty, p:empty, td:empty, th:empty,
+	*[title=""], *[class=""], *[id=""] {
+		outline: 2px solid red !important;
+		outline-offset: 3px !important;
+		}
+	head, title:empty, link, meta {display: block;}
+	title:empty:before {content: "You've left the <title> empty!"}
+	link:before {content: "You don't have a <title>!"}
+	title ~ link {display: none;}
+	meta[name="description"][content=""]:before, meta[name="description"][content=" "]:before {content: "You've left description empty!";}
+	}
+
+/* Normalize */
+.normalize(){article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}}
+
+/* Reset */
+.reset () {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		}
+		
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+		}
+body {
+		line-height: 1;
+		}
+ol, ul {
+		list-style: none; }
+blockquote, q {
+	quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	content: '';
+	content: none;
+		}
+		
+table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+nav {
+	a, a:visited {
+		text-decoration:none;
+	}
+}
+}
